@@ -1,10 +1,10 @@
-<div class="row border-top py-3 px-3">
-  <div class="col-sm-2 gx-0 text-end">
+<div class="grid border-top py-3 px-3">
+  <div class="g-col gx-0">
     <%# https://xsgames.co/randomusers/ %>
     <%= image_tag "https://xsgames.co/randomusers/avatar.php?g=pixel&id=#{SecureRandom.uuid}", class: "img-thumbnail rounded-circle", style: "max-width: 48px" %>
   </div>
 
-  <div class="col-sm-10">
+  <div class="g-col">
     <p class="mb-0">
       <%= link_to tweet.monster, class: "text-dark text-decoration-none" do %>
         <span class="fw-bold">

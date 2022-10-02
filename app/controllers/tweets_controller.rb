@@ -16,7 +16,7 @@ class TweetsController < ApplicationController
         # Si se pudo crear se muestra
         if @tweet.save 
             # Se muestra el tweet
-            redirect_to @tweet
+            redirect_to @tweet, notice: "Tweet creado."
         else
             # Se renderizo el new.html.erb
             render :new

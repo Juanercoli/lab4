@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lab4</title>
+  <%# Si hay un page_title con contenido entonces lo uso%>
+  <title><%= content_for(:page_title)? yield(:page_title) : "Critter" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,17 +11,17 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <div class="container">
       <div class="row">
         <div class="col-sm-3">
           <%= render "application/left_sidebar" %>
         </div>
-        <div class="col-sm-5 border border-top-0">
+        <div class="col-sm-9 border border-top-0 mb-0">
           <%= yield %>
         </div>
-        <div class="col-sm-4"></div>
       </div>
     </div>
+    <%= render "application/footer" %>
   </body>
 </html>
